@@ -1,0 +1,378 @@
+{% extends 'index.html' %}
+
+{% block form %}
+<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+    
+    <div class="row">
+        <div class="row col-lg-3 mr-1">
+            <input class="form-control" type="text" placeholder="Especialidad" aria-label="Especialidad" />
+        </div>
+        <div class="row col-lg-3 mr-1">
+            <input class="form-control" type="text" placeholder="Procedimiento" aria-label="Procedimiento"  />
+        </div>
+        <div class="row col-lg-3 mr-1">
+            <input class="form-control" type="text" placeholder="Ganancia" aria-label="Ganancia"  />
+        </div>
+        <div class="row col-lg-2 mr-1">
+            <button class="btn btn-info" type="submit">Consultar</button>
+        </div>
+        <div class="row col-lg-1 mr-3">
+            <button class="btn btn-danger" href="#">Limpiar</button>
+        </div>
+        
+    </div>
+
+</form>
+
+{% endblock form %}
+
+{% block content %}
+<main class="small">
+    <div class="ml-2">
+
+        <div class=" row card mb-4 border border-success ml-2 mt-2 mr-2">
+            <div class="card-body">
+                
+                <div class="row justify-content-center">
+                    
+                    <div class="table-responsive  col-lg-3">
+                        <h5 class="color_texto font-weight-bold">ESPECIALISTAS</h5>
+
+                        <table class="table table-bordered table-hover table">
+                            <thead class="color">
+                                <tr>
+                                    <th>Concepto</th>
+                                    <th>Valor</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive col-lg-3">
+                        <h5 class="color_texto font-weight-bold">SALARIOS
+                        </h5>
+                        <table class="table table-bordered table-hover table">
+                            <thead class="color">
+                                <tr >
+                                    <th>Concepto</th>
+                                    <th>Valor</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="table-responsive  col-lg-3">
+                        <h5 class="color_texto font-weight-bold">CONSULTAS</h5>
+
+                        <table class="table table-bordered table-hover table">
+                            <thead class="color">
+                                <tr>
+                                    <th>Concepto</th>
+                                    <th>Valor</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive col-lg-3">
+                        <h5 class="color_texto font-weight-bold">OTROS RUBROS</h5>
+                        <table class="table table-bordered table-hover table">
+                            <thead class="color">
+                                <tr >
+                                    <th>Concepto</th>
+                                    <th>Valor</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiger Nixon</td>
+                                    <td>System Architect</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+           
+        
+        <div class="card border border-dark ml-2 mr-2">
+
+            <div class="row">
+                <div class="card-body  ml-2">
+               
+                    <h5 class="font-weight-bold">CANASTA</h5>
+                    <div class="table-responsive " style="height: 30rem;">
+                        
+                        <div class="row " style="position: sticky; top: 0; z-index: 10;background-color: #fff;">
+                            <div class="col-xl-2 col-md-6">
+                                <div class="card bg-secondary text-white mb-4 p-1">
+                                    <div class="card-body p-0">DESECHABLE: 100000
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6">
+                                <div class="card bg-secondary text-white mb-4 p-1">
+                                    <div class="card-body p-0">MEDICAMENTO: 100000
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6">
+                                <div class="card bg-secondary text-white mb-4 p-1">
+                                    <div class="card-body p-0">DISP.MEDICO: 100000
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6">
+                                <div class="card bg-secondary text-white mb-4 p-1">
+                                    <div class="card-body p-0">PQ.DESECHABLE: 100000
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6">
+                                <div class="card bg-secondary text-white mb-4 p-1">
+                                    <div class="card-body p-0">LIMPIEZA: 100000
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6">
+                                <div class="card bg-secondary text-white mb-4 p-1">
+                                    <div class="card-body p-0">PQ.REUTILIZAB: 100000
+                                    </div>
+                                    
+                                </div>
+                            </div>
+    
+    
+                        </div>
+                        <table class="table table-bordered table-hover" width="100%"  id="dataTable" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="position: sticky; top: 2rem; z-index: 10; background-color: #17a2b8;" >ID</th>
+                                    <th style="position: sticky; top: 2rem; z-index: 10; background-color: #17a2b8;" >Nombre de la Canasta</th>
+                                    <th style="position: sticky; top: 2rem; z-index: 10; background-color: #17a2b8;" >Ubicación</th>
+                                    <th style="position: sticky; top: 2rem; z-index: 10; background-color: #17a2b8;" >Insumo</th>
+                                    <th style="position: sticky; top: 2rem; z-index: 10; background-color: #17a2b8;" >Cantidad</th>
+                                    <th style="position: sticky; top: 2rem; z-index: 10; background-color: #17a2b8;" >Costo Unitario</th>
+                                    <th style="position: sticky; top: 2rem; z-index: 10; background-color: #17a2b8;" >Costo Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+    
+                                {% for canasta in canastas %}
+                                    <tr>
+                                        <td>{{canasta.id}}</td>
+                                        <td>{{canasta.nombreCanasta.name_can}}</td>
+                                        <td>{{canasta.actividad.nombre_act}}</td>
+                                        <td>{{canasta.insumo.nombre}}</td>
+                                        <td>{{canasta.cantidad}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                    </tr>
+                                {% endfor %}
+                                {% for canasta in canastas %}
+                                    <tr>
+                                        <td>{{canasta.id}}</td>
+                                        <td>{{canasta.nombreCanasta.name_can}}</td>
+                                        <td>{{canasta.actividad.nombre_act}}</td>
+                                        <td>{{canasta.insumo.nombre}}</td>
+                                        <td>{{canasta.cantidad}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                    </tr>
+                                {% endfor %}
+                                {% for canasta in canastas %}
+                                    <tr>
+                                        <td>{{canasta.id}}</td>
+                                        <td>{{canasta.nombreCanasta.name_can}}</td>
+                                        <td>{{canasta.actividad.nombre_act}}</td>
+                                        <td>{{canasta.insumo.nombre}}</td>
+                                        <td>{{canasta.cantidad}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                    </tr>
+                                {% endfor %}
+                                {% for canasta in canastas %}
+                                    <tr>
+                                        <td>{{canasta.id}}</td>
+                                        <td>{{canasta.nombreCanasta.name_can}}</td>
+                                        <td>{{canasta.actividad.nombre_act}}</td>
+                                        <td>{{canasta.insumo.nombre}}</td>
+                                        <td>{{canasta.cantidad}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                    </tr>
+                                {% endfor %}
+                                {% for canasta in canastas %}
+                                    <tr>
+                                        <td>{{canasta.id}}</td>
+                                        <td>{{canasta.nombreCanasta.name_can}}</td>
+                                        <td>{{canasta.actividad.nombre_act}}</td>
+                                        <td>{{canasta.insumo.nombre}}</td>
+                                        <td>{{canasta.cantidad}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                    </tr>
+                                {% endfor %}
+                                {% for canasta in canastas %}
+                                    <tr>
+                                        <td>{{canasta.id}}</td>
+                                        <td>{{canasta.nombreCanasta.name_can}}</td>
+                                        <td>{{canasta.actividad.nombre_act}}</td>
+                                        <td>{{canasta.insumo.nombre}}</td>
+                                        <td>{{canasta.cantidad}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                    </tr>
+                                {% endfor %}
+                                {% for canasta in canastas %}
+                                    <tr>
+                                        <td>{{canasta.id}}</td>
+                                        <td>{{canasta.nombreCanasta.name_can}}</td>
+                                        <td>{{canasta.actividad.nombre_act}}</td>
+                                        <td>{{canasta.insumo.nombre}}</td>
+                                        <td>{{canasta.cantidad}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                    </tr>
+                                {% endfor %}
+                                {% for canasta in canastas %}
+                                    <tr>
+                                        <td>{{canasta.id}}</td>
+                                        <td>{{canasta.nombreCanasta.name_can}}</td>
+                                        <td>{{canasta.actividad.nombre_act}}</td>
+                                        <td>{{canasta.insumo.nombre}}</td>
+                                        <td>{{canasta.cantidad}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                    </tr>
+                                {% endfor %}
+                                {% for canasta in canastas %}
+                                    <tr>
+                                        <td>{{canasta.id}}</td>
+                                        <td>{{canasta.nombreCanasta.name_can}}</td>
+                                        <td>{{canasta.actividad.nombre_act}}</td>
+                                        <td>{{canasta.insumo.nombre}}</td>
+                                        <td>{{canasta.cantidad}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                    </tr>
+                                {% endfor %}
+                                {% for canasta in canastas %}
+                                    <tr>
+                                        <td>{{canasta.id}}</td>
+                                        <td>{{canasta.nombreCanasta.name_can}}</td>
+                                        <td>{{canasta.actividad.nombre_act}}</td>
+                                        <td>{{canasta.insumo.nombre}}</td>
+                                        <td>{{canasta.cantidad}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                    </tr>
+                                {% endfor %}
+                                {% for canasta in canastas %}
+                                    <tr>
+                                        <td>{{canasta.id}}</td>
+                                        <td>{{canasta.nombreCanasta.name_can}}</td>
+                                        <td>{{canasta.actividad.nombre_act}}</td>
+                                        <td>{{canasta.insumo.nombre}}</td>
+                                        <td>{{canasta.cantidad}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                    </tr>
+                                {% endfor %}
+                                {% for canasta in canastas %}
+                                    <tr>
+                                        <td>{{canasta.id}}</td>
+                                        <td>{{canasta.nombreCanasta.name_can}}</td>
+                                        <td>{{canasta.actividad.nombre_act}}</td>
+                                        <td>{{canasta.insumo.nombre}}</td>
+                                        <td>{{canasta.cantidad}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                        <td>{{canasta.insumo.valor}}</td>
+                                    </tr>
+                                {% endfor %}
+    
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+
+            </div>
+
+
+        </div>
+    </div>
+</main>
+
+{% endblock content %}
