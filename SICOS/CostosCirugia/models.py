@@ -141,7 +141,8 @@ class HonorarioSalario(models.Model):
     cargo = models.ForeignKey(Cargo,verbose_name = 'Cargo', null = True, on_delete=models.PROTECT)
     costo = models.FloatField('Costo no Paramertrizado', null = True, blank = True, default=0)
     actividad =  models.ForeignKey(Actividad, verbose_name ='Ubicación', null = True,blank=True, on_delete = models.PROTECT)
-
+    def __str__(self):
+        return '%s' % (self.cargo)
 
 #este modelo es solo para consultar los procedimientos
 class Consulta(models.Model):

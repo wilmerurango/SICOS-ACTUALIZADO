@@ -10,23 +10,36 @@
         <meta name="author" content="" />
         <title>SICOS</title>
         
+        <!--init librerias por defecto -->
         <link href="{% static 'dist/css/styles.css' %}" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <link href="{% static 'css2/estilos.css' %}"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+        <!--end librerias por defecto -->
 
+        <!--init estas librerias son para los graficos de hicharts -->
+        <script src="{% static 'code/highcharts.js' %}"></script>
+        <script src="{% static 'code/modules/exporting.js' %}"></script>
+        <script src="{% static 'code/modules/export-data.j' %}s"></script>
+        <script src="{% static 'code/modules/accessibility.js' %}"></script>
+        <!--end estas librerias son para los graficos de hicharts -->
+
+        <!-- init estilos personalizados -->
         <style>
             .color{
                 background: rgb(11, 100, 11);
                 color: #fff;
             }
-
             .color_texto{
                 color: rgb(11, 100, 11);
             }
 
-
         </style>
+        <!-- end estilos personalizados -->
+
+        {% block js %}
+
+        {% endblock js %}
 
     </head>
     <body class="sb-nav-fixed">
@@ -59,47 +72,60 @@
                 </li>
             </ul>
         </nav>
+
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="{% static 'dist/index.html' %}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
-                            </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Layouts
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
-                                </nav>
-                            </div>
+                            <div class="sb-sidenav-menu-heading">COSTOS CX</div>
+                            
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
+                                <div class="sb-nav-link-icon"><i class="fas fa-cogs"></i></div>
+                                PARAMETROS
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Authentication
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    <a class="nav-link" href="charts.html">
+                                        <div class="sb-nav-link-icon"><i class="fas fa-user-md"></i></div>
+                                        Especialidades
                                     </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                    <a class="nav-link" href="charts.html">
+                                        <div class="sb-nav-link-icon"><i class="fas fa-hand-holding-medical"></i></div>
+                                        Procedimientos
+                                    </a>
+                                    <a class="nav-link" href="charts.html">
+                                        <div class="sb-nav-link-icon"><i class="fas fa-comment-dollar"></i></div>
+                                        Conceptos de pago
+                                    </a>
+
+                                    <a class="nav-link" href="charts.html">
+                                        <div class="sb-nav-link-icon"><i class="fas fa-comment-dollar"></i></div>
+                                        Conceptos Canasta
+                                    </a> 
+
+                                    <a class="nav-link" href="charts.html">
+                                        <div class="sb-nav-link-icon"><i class="fas fa-donate"></i></div>
+                                        Honorarios-Salarios
+                                    </a>
+
+                                    <a class="nav-link" href="charts.html">
+                                        <div class="sb-nav-link-icon"><i class="fas fa-people-arrows"></i></div>
+                                        Cargos
+                                    </a>
+
+                                    <a class="nav-link" href="charts.html">
+                                        <div class="sb-nav-link-icon"><i class="fas fa-capsules"></i></div>
+                                        Medicamentos e Insumos
+                                    </a>
+
+                                    <a class="nav-link" href="charts.html">
+                                        <div class="sb-nav-link-icon"><i class="fas fa-shopping-basket"></i></div>
+                                        Canasta
+                                    </a>
+                                    
+                                    <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
                                         Error
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
@@ -109,18 +135,27 @@
                                             <a class="nav-link" href="404.html">404 Page</a>
                                             <a class="nav-link" href="500.html">500 Page</a>
                                         </nav>
-                                    </div>
+                                    </div> -->
+                                    
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                <div class="sb-nav-link-icon"><i class="fas fa-search"></i></div>
+                                BUSCAR
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
-                            </a>
+
+                            <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{% url 'consulta' %}">
+                                        <div class="sb-nav-link-icon"> <i class="fas fa-search-plus"></i></div> 
+                                        Consultar Costo
+                                    </a>
+                                </nav>
+                            </div>
+
+                            
+
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
