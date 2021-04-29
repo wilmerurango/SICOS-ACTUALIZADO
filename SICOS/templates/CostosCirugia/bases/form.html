@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- formulario -->
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-3">
+                <div class="card-header">
+                    <h3 class="text-center font-weight-light my-4">Crear Especialidad</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{form.nombre_tipo_proc}}
+                        <br>
+                        <button class="btn btn-primary" id="boton" onclick="alerta();" type="submit">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    {% if form.errors %}
+        var errors = '';
+        {% for field in form %}
+            {% for error in field.errors %}
+
+                errors += '{{ error }}\n';
+
+            {% endfor %}
+        {% endfor %}
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Error al Ingresar los Datos',
+            text: errors,
+            // footer: '<a href>Why do I have this issue?</a>'
+        })
+    {%else%}
+    function alerta(){
+        var intro = document.getElementById('id_nombre_tipo_proc');
+        if (intro === " ") {
+            alert('se guarado')
+        }
+        // console.log(window.location.href)
+        // $.post(window.location.href,
+        //     function(){
+                
+        //     }
+        // );
+    };
+
+    {% endif %}
+
+
+</script>
+{% endblock content %}

@@ -26,7 +26,7 @@ SECRET_KEY = 'l0@^$@u$imvp(&95_=%j0gltn9z+(gbjjd@%vk3ptr$s+z__&5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost','192.168.0.206']
 
 
 # Application definition
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'SICOS.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'clinica_del_rio_2021',
+        'NAME': 'sicos',
         'USER': 'postgres',
         'PASSWORD': '09241995',
         'HOST': 'localhost',
@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-co'
 
 TIME_ZONE = 'UTC'
 

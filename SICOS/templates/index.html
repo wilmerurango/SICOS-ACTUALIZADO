@@ -18,11 +18,18 @@
         <!--end librerias por defecto -->
 
         <!--init estas librerias son para los graficos de hicharts -->
-        <script src="{% static 'code/highcharts.js' %}"></script>
-        <script src="{% static 'code/modules/exporting.js' %}"></script>
-        <script src="{% static 'code/modules/export-data.j' %}s"></script>
-        <script src="{% static 'code/modules/accessibility.js' %}"></script>
+        <script src="{% static 'librerias/code/highcharts.js' %}"></script>
+        <script src="{% static 'librerias/code/modules/exporting.js' %}"></script>
+        <script src="{% static 'librerias/code/modules/export-data.j' %}s"></script>
+        <script src="{% static 'librerias/code/modules/accessibility.js' %}"></script>
         <!--end estas librerias son para los graficos de hicharts -->
+
+
+        <!--init alertas de error -->
+        <script src="{% static 'librerias/sweetalert2/dist/sweetalert2.all.min.js' %}"></script>
+        <script src="{% static 'librerias/sweetalert2/dist/sweetalert2.min.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'librerias/sweetalert2/dist/sweetalert2.min.css' %}">
+        <!--init alertas de error -->
 
         <!-- init estilos personalizados -->
         <style>
@@ -87,7 +94,7 @@
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link" href="charts.html">
+                                    <a class="nav-link" href="{% url 'TipoProcedimientoList' %}">
                                         <div class="sb-nav-link-icon"><i class="fas fa-user-md"></i></div>
                                         Especialidades
                                     </a>

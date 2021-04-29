@@ -6,6 +6,8 @@ from CostosCirugia.views import *
 urlpatterns = [
     path('', index,name="index"),
     path('login', login,name="login"),
-    # path('consulta_plantilla', consulta_plantilla,name="consulta_plantilla"),
     path('consulta', consulta.as_view(),name="consulta"),
+    path('TipoProcedimientoCrear', TipoProcedimientoCrear.as_view(),name="TipoProcedimientoCrear"),
+    path('TipoProcedimientoList', TipoProcedimientoList.as_view(),name="TipoProcedimientoList"),
+
 ]
