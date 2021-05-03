@@ -8,15 +8,19 @@
         <!-- formulario -->
         <div class="col-lg-5">
             <div class="card shadow-lg border-0 rounded-lg mt-3">
+
                 <div class="card-header">
-                    <h3 class="text-center font-weight-light my-4">Crear Especialidad</h3>
+                    {% block title_form %}
+                        
+                    {% endblock title_form %}
                 </div>
                 <div class="card-body">
                     <form method="post">
                         {% csrf_token %}
-                        {{form.nombre_tipo_proc}}
-                        <br>
-                        <button class="btn btn-primary" id="boton" onclick="alerta();" type="submit">Guardar</button>
+
+                        {% block form %}
+
+                        {% endblock form %}
                     </form>
                 </div>
             </div>
@@ -56,7 +60,6 @@
     };
 
     {% endif %}
-
 
 </script>
 {% endblock content %}

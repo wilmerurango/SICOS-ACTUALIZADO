@@ -1,44 +1,25 @@
-{% extends 'index.html' %}
+{% extends 'CostosCirugia/bases/list.html' %}
 
-{% block content %}
-    <!-- lista -->
-    <div class="col-lg-12">
-        <div class="mt-3">
-            <a href="{% url 'TipoProcedimientoCrear' %}" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Crear Especialidad</a>
-        </div>
 
-        <div class="card mb-4 mt-3">
+{% block title_list %}
+    ESPECIALIDADES
+{% endblock title_list %}
 
-            <div class="card-header">
-                <i class="fas fa-table"></i>
-                ESPECIALIDADES
-            </div>
+{% block encabezado %}
+    <th style="position: sticky; top: 0; z-index: 10; background-color: #17a2b8;">ID</th>
+    <th style="position: sticky; top: 0; z-index: 10; background-color: #17a2b8;">Nombre
+        Espcialidad</th>
+    <th style="position: sticky; top: 0; z-index: 10; background-color: #17a2b8;">Accion</th>
+{% endblock encabezado %}
 
-            <div class="card-body  ml-2">
-                <div class="table-responsive " style="height: 30rem;">
-                    <table class="table table-bordered table-hover" width="100%" id="dataTable" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th style="position: sticky; top: 0; z-index: 10; background-color: #17a2b8;">ID</th>
-                                <th style="position: sticky; top: 0; z-index: 10; background-color: #17a2b8;">Nombre
-                                    Espcialidad</th>
-                                <th style="position: sticky; top: 0; z-index: 10; background-color: #17a2b8;">Accion</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for TipoProcedimiento in TipoProcedimientos %}
-                            <tr>
-                                <td>{{TipoProcedimiento.id}}</td>
-                                <td>{{TipoProcedimiento.nombre_tipo_proc}}</td>
-                                <td>Accion</td>
 
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-{% endblock content %}
+{% block cuerpo %}
+    {% for TipoProcedimiento in TipoProcedimientos %}
+    <tr>
+        <td>{{TipoProcedimiento.id}}</td>
+        <td>{{TipoProcedimiento.nombre_tipo_proc}}</td>
+        <td></td>
 
+    </tr>
+    {% endfor %}
+{% endblock cuerpo %}

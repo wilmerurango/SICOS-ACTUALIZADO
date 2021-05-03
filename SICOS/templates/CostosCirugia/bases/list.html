@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <!-- lista -->
+    <div class="col-lg-12">
+        <div class="mt-3">
+            <a href="{% url 'TipoProcedimientoCrear' %}" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Crear Especialidad</a>
+        </div>
+
+        <div class="card mb-4 mt-3">
+
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                {% block title_list %}
+                    
+                {% endblock title_list %}
+            </div>
+
+            <div class="card-body  ml-2">
+                <div class="table-responsive " style="height: 30rem;">
+                    <table class="table table-bordered table-hover" width="100%" id="dataTable" cellspacing="0">
+                        <thead>
+                            <tr>
+                                {% block encabezado %}
+
+                                {% endblock encabezado %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% block cuerpo %}
+                                
+                            {% endblock cuerpo %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+

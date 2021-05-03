@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'SICOS.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sicos',
+        'NAME': 'db_prueba',
         'USER': 'postgres',
         'PASSWORD': '09241995',
         'HOST': 'localhost',

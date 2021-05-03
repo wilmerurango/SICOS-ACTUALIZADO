@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 from django.http import HttpResponse, HttpResponseRedirect
 
-from CostosCirugia.models import *
-from CostosCirugia.forms import *
-from CostosCirugia.funciones.calculos import *
+from .models import *
+from .forms import *
+from .funciones.calculos import *
 
 # Create your views here.
 def index(request,*args, **kwargs):
@@ -73,3 +73,9 @@ class TipoProcedimientoList(ListView):
         especialidad = TipoProcedimiento.objects.all()
         context['TipoProcedimientos'] = especialidad
         return context
+
+class TipoProcedimientoEdit(UpdateView):
+    model = TipoProcedimiento
+    form_class = TipoProcedimientoForm
+    template_name = 'CostosCirugia/TipoProcedimiento_crear.html'
+    success_url= reverse_lazy('TipoProcedimientoEdit')
