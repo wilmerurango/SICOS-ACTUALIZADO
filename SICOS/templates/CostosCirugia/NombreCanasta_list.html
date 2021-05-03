@@ -1,0 +1,33 @@
+{% extends 'CostosCirugia/bases/list.html' %}
+
+
+{% block title_list %}
+    CANASTAS
+{% endblock title_list %}
+
+{% block btn_crear %}
+    <a href="{% url 'NombreCanastaCrear' %}" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Crear Canasta</a>
+{% endblock btn_crear %}
+
+{% block encabezado %}
+    <th style="position: sticky; top: 0; z-index: 10; background-color: #17a2b8;">ID</th>
+    <th style="position: sticky; top: 0; z-index: 10; background-color: #17a2b8;">Nombre Canasta
+        Espcialidad</th>
+    <th style="position: sticky; top: 0; z-index: 10; background-color: #17a2b8;">Acción</th>
+{% endblock encabezado %}
+
+
+{% block cuerpo %}
+    {% if object_list %}
+
+        {% for NombreCanasta in object_list %}
+        <tr>
+            <td>{{NombreCanasta.id}}</td>
+            <td>{{NombreCanasta.name_can}}</td>
+            <td><a href="{% url 'NombreCanastaEdit' NombreCanasta.id %}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a></td>
+
+        </tr>
+        {% endfor %}
+
+    {% endif %}
+{% endblock cuerpo %}

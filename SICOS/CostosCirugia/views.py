@@ -68,14 +68,50 @@ class TipoProcedimientoList(ListView):
     model = TipoProcedimiento
     template_name = 'TipoProcedimientoList.html'
 
-    def get_context_data(self,*args,**kwargs):
-        context = super().get_context_data(**kwargs)
-        especialidad = TipoProcedimiento.objects.all()
-        context['TipoProcedimientos'] = especialidad
-        return context
+    # def get_context_data(self,*args,**kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     especialidad = TipoProcedimiento.objects.all()
+    #     context['TipoProcedimientos'] = especialidad
+    #     return context
 
 class TipoProcedimientoEdit(UpdateView):
     model = TipoProcedimiento
     form_class = TipoProcedimientoForm
-    template_name = 'CostosCirugia/TipoProcedimiento_crear.html'
-    success_url= reverse_lazy('TipoProcedimientoEdit')
+    template_name = 'CostosCirugia/TipoProcedimiento_edit.html'
+    success_url= reverse_lazy('TipoProcedimientoList')
+
+
+
+
+
+class NombreCanastaCrear(CreateView):
+    model = NombreCanasta
+    form_class = NombreCanastaForm
+    template_name = 'CostosCirugia/NombreCanasta_crear.html'
+    success_url= reverse_lazy('NombreCanastaCrear')
+
+    def post(self,request,*args,**kwargs):
+        form = NombreCanastaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(self.success_url)
+        self.object = None
+        context = self.get_context_data(**kwargs)
+        context['form'] = form
+        return render(request, self.template_name, context)
+
+class NombreCanastaList(ListView):
+    model = NombreCanasta
+    template_name = 'NombreCanasta_list.html'
+
+    # def get_context_data(self,*args,**kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     especialidad = NombreCanasta.objects.all()
+    #     context['NombreCanasta'] = especialidad
+    #     return context
+
+class NombreCanastaEdit(UpdateView):
+    model = NombreCanasta
+    form_class = NombreCanastaForm
+    template_name = 'CostosCirugia/NombreCanasta_edit.html'
+    success_url= reverse_lazy('NombreCanastaList')

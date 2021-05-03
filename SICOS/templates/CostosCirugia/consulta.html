@@ -2,7 +2,7 @@
 {% load humanize %}
 
 
-{% block form %}
+{% block form_consulta %}
 <form method="post" class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
     {% csrf_token %}
     <div class="row">
@@ -31,7 +31,7 @@
 
 </form>
 
-{% endblock form %}
+{% endblock form_consulta %}
 
 {% block content %}
 <main class="small">

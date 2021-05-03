@@ -1,4 +1,4 @@
-{% extends 'CostosCirugia/bases/form.html' %}
+{% extends 'CostosCirugia/bases/edit.html' %}
 
 
 {% block title_form %}
@@ -10,5 +10,6 @@
     <label>Nombre de Especialidad:</label>
     {{form.nombre_tipo_proc}}
     <br>
-    <button class="btn btn-primary" id="boton" onclick="alerta();" type="submit">Guardar</button>
+    <button class="btn btn-info small" id="boton"  type="submit">Guardar</button>
+    <button class="btn btn-danger small" id="boton"  href="{% url 'TipoProcedimientoList' %}" >Cancelar</button>
 {% endblock form %}
