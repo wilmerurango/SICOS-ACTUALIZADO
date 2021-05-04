@@ -11,6 +11,7 @@ class TipoProcedimiento(models.Model):
         ordering = ['nombre_tipo_proc']
 
 
+
 class NombreCanasta(models.Model):
     name_can = models.CharField('Nombre de la Canasta', null = True, max_length = 85, unique=True)
     
@@ -21,6 +22,7 @@ class NombreCanasta(models.Model):
         ordering = ['name_can']
 
 
+
 class ConceptoHonorarioSalario(models.Model):
     nombre_concep_hon = models.CharField('Nombre del Concepto', null = True, max_length = 30, unique=True)
     
@@ -29,6 +31,7 @@ class ConceptoHonorarioSalario(models.Model):
     
     class Meta:
         ordering = ['nombre_concep_hon']
+
 
 
 class Actividad(models.Model):#aqui se escribe a q actividad pertenece el salario (entrada, ciruria, postcirugia, salida , etc)

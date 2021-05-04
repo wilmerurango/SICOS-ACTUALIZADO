@@ -48,6 +48,7 @@ class consulta(CreateView):
         return context
 
 
+
 class TipoProcedimientoCrear(CreateView):
     model = TipoProcedimiento
     form_class = TipoProcedimientoForm
@@ -82,8 +83,6 @@ class TipoProcedimientoEdit(UpdateView):
 
 
 
-
-
 class NombreCanastaCrear(CreateView):
     model = NombreCanasta
     form_class = NombreCanastaForm
@@ -115,3 +114,105 @@ class NombreCanastaEdit(UpdateView):
     form_class = NombreCanastaForm
     template_name = 'CostosCirugia/NombreCanasta_edit.html'
     success_url= reverse_lazy('NombreCanastaList')
+
+
+
+class ConceptoHonorarioSalarioCrear(CreateView):
+    model = ConceptoHonorarioSalario
+    form_class = ConceptoHonorarioSalarioForm
+    template_name = 'CostosCirugia/ConceptoHonorarioSalario_crear.html'
+    success_url= reverse_lazy('ConceptoHonorarioSalarioCrear')
+
+    def post(self,request,*args,**kwargs):
+        form = ConceptoHonorarioSalarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(self.success_url)
+        self.object = None
+        context = self.get_context_data(**kwargs)
+        context['form'] = form
+        return render(request, self.template_name, context)
+
+class ConceptoHonorarioSalarioList(ListView):
+    model = ConceptoHonorarioSalario
+    template_name = 'ConceptoHonorarioSalario_list.html'
+
+    # def get_context_data(self,*args,**kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     obj = ConceptoHonorarioSalario.objects.all()
+    #     context['ConceptoHonorarioSalario'] = obj
+    #     return context
+
+class ConceptoHonorarioSalarioEdit(UpdateView):
+    model = ConceptoHonorarioSalario
+    form_class = ConceptoHonorarioSalarioForm
+    template_name = 'CostosCirugia/ConceptoHonorarioSalario_edit.html'
+    success_url= reverse_lazy('ConceptoHonorarioSalarioList')
+
+
+
+class ActividadCrear(CreateView):
+    model = Actividad
+    form_class = ActividadForm
+    template_name = 'CostosCirugia/Actividad_crear.html'
+    success_url= reverse_lazy('ActividadCrear')
+
+    def post(self,request,*args,**kwargs):
+        form = ActividadForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(self.success_url)
+        self.object = None
+        context = self.get_context_data(**kwargs)
+        context['form'] = form
+        return render(request, self.template_name, context)
+
+class ActividadList(ListView):
+    model = Actividad
+    template_name = 'Actividad_list.html'
+
+    # def get_context_data(self,*args,**kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     obj = ConceptoHonorarioSalario.objects.all()
+    #     context['Actividad'] = obj
+    #     return context
+
+class ActividadEdit(UpdateView):
+    model = Actividad
+    form_class = ActividadForm
+    template_name = 'CostosCirugia/Actividad_edit.html'
+    success_url= reverse_lazy('ActividadList')
+
+
+
+class ConstanteCrear(CreateView):
+    model = Constante
+    form_class = ConstanteForm
+    template_name = 'CostosCirugia/Constante_crear.html'
+    success_url= reverse_lazy('ConstanteCrear')
+
+    def post(self,request,*args,**kwargs):
+        form = ConstanteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(self.success_url)
+        self.object = None
+        context = self.get_context_data(**kwargs)
+        context['form'] = form
+        return render(request, self.template_name, context)
+
+class ConstanteList(ListView):
+    model = Constante
+    template_name = 'Constante_list.html'
+
+    # def get_context_data(self,*args,**kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     obj = Constante.objects.all()
+    #     context['Constante'] = obj
+    #     return context
+
+class ConstanteEdit(UpdateView):
+    model = Constante
+    form_class = ConstanteForm
+    template_name = 'CostosCirugia/Constante_edit.html'
+    success_url= reverse_lazy('ConstanteList')

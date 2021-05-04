@@ -1,0 +1,32 @@
+{% extends 'CostosCirugia/bases/list.html' %}
+
+
+{% block title_list %}
+    CONCEPTOS DE PAGO
+{% endblock title_list %}
+
+{% block btn_crear %}
+    <a href="{% url 'ConceptoHonorarioSalarioCrear' %}" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Crear Concepto de Pago</a>
+{% endblock btn_crear %}
+
+{% block encabezado %}
+    <th style="position: sticky; top: 0; z-index: 10; background-color: #17a2b8;">ID</th>
+    <th style="position: sticky; top: 0; z-index: 10; background-color: #17a2b8;">Concepto de Pago</th>
+    <th style="position: sticky; top: 0; z-index: 10; background-color: #17a2b8;">Acción</th>
+{% endblock encabezado %}
+
+
+{% block cuerpo %}
+    {% if object_list %}
+
+        {% for ConceptoHonorarioSalario in object_list %}
+        <tr>
+            <td>{{ConceptoHonorarioSalario.id}}</td>
+            <td>{{ConceptoHonorarioSalario.nombre_concep_hon}}</td>
+            <td><a href="{% url 'ConceptoHonorarioSalarioEdit' ConceptoHonorarioSalario.id %}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a></td>
+
+        </tr>
+        {% endfor %}
+
+    {% endif %}
+{% endblock cuerpo %}

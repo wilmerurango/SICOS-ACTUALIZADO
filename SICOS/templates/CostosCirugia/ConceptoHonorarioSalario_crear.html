@@ -1,0 +1,13 @@
+{% extends 'CostosCirugia/bases/crear.html' %}
+
+{% block title_form %}
+    <h3 class="text-center font-weight-light my-4">Crear Concepto de Pago</h3>
+{% endblock title_form %}
+
+
+{% block form %}
+    <label>Nombre Concepto de Pago:</label>
+    {{form.nombre_concep_hon}}
+    <br>
+    <button class="btn btn-primary" id="boton" onclick="alerta();" type="submit">Guardar</button>
+{% endblock form %}
